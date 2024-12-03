@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nodejs:
+    build:
+      context: .
+    ports:
+      - "8080:3000" # Пробрасываем порт 8080 на порт 3000 внутри контейнера
+    volumes:
+      - .:/usr/src/app # Связываем локальные файлы с контейнером для разработки
+    environment:
+      NODE_ENV: development
